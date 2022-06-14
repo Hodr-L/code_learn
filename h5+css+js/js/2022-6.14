@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+	</head>
+	<body>
+		<input size="5" id="in5"/>~
+		<button onclick="btn_add()">添加</button>~
+		<button onclick="btn_max()">最大值</button>~
+		<button onclick="btn_show()">查看全部</button>
+		<script type="text/javascript">
+			var f,max
+			// var arr =new Array()
+			var arr=[87,66,3,45,99,20,500,30]
+			function btn_add(){
+					f=document.getElementById("in5").value
+					arr.push(f)
+					document.getElementById("in5").value=null
+					// alert("添加成功！")
+			}
+			
+			function btn_show(){
+				if (arr.length==0){
+					document.write("还没有添加任何数！")
+				}else{
+					document.write("已添加的数值：<br />")
+					for(var i=0;i<arr.length;i++){
+						document.write(arr[i]+"<br />")
+					}
+				}
+			}
+			
+			function btn_max(){
+				// var max=arr[0]
+				for(var i=0;i<arr.length-1;i++){
+					for (var c=0;c<arr.length-1;c++){
+						if (arr[c]>arr[c+1]){
+							max=arr[c]
+							arr[c]=arr[c+1]
+							arr[c+1]=max
+							}
+						}
+					}
+			// 	var max=arr[0]
+			// 	if (arr.length==0){
+			// 		document.write("还没有添加任何数！")
+			// 	}else{
+			// 		for(var i=0;i<arr.length;i++){
+			// 			if (arr[i]>max){
+			// 				max=arr[i]
+			// 			}
+			// 		}
+					document.write(arr)
+			// 	}
+			// }
+			}
+		</script>
+		
+		
+	</body>
+</html>
