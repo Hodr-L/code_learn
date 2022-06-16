@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定时器</title>
+	</head>
+	<body>
+		<font id="no.1">倒计时 : 60</font><br />
+		<button onclick="btn()">开始</button>
+		<script type="text/javascript">
+				var i=60
+				var timer=null
+				function btn(){
+					if(timer==null){
+						timer=window.setInterval("btn2()",10)
+					}
+				}
+				function btn2(){
+					i--
+					if (i<0){
+						window.clearInterval(timer)
+						i=60
+						timer=null
+					}
+					document.getElementById("no.1").textContent="倒计时 : "+i
+				}
+				
+		</script>
+	</body>
+</html>

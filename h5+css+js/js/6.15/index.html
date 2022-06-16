@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>6.15</title>
+	</head>
+	
+	<body>
+		<img  onclick="btn5()" id="no.1"  src="img/二西莫夫.png" width="550dx" height="300dp"/><br />
+		<button  onclick="btn1()" >上一张</button>~
+		<button  onclick="btn2()" >下一张</button>~
+		<button onclick="btn3()">轮播</button>
+		
+		<script type="text/javascript">
+			//99乘法表
+			// var i,j
+			// for (i=1;i<10;i++){
+			// 	for(j=1;j<=i;j++){
+			// 		document.write(j+"*"+i+"="+i*j+"&nbsp")
+			// 	}
+			// 	document.write("<br />")
+			// }
+			
+			
+			//图片轮播
+			var i=0
+			var timer=null
+			var arr=new Array()
+			arr=["img/二西莫夫.png","img/黑色魅影.png","img/美杜莎.png","img/咆哮.png","img/永恒之钻.png"]
+			function btn2(){
+				i++
+				if(i>4){
+					i=0
+				}
+				document.getElementById("no.1").src=arr[i]
+			}
+			function btn1(){
+				i--
+				if(i<0){
+					i=4
+				}
+				document.getElementById("no.1").src=arr[i]
+			}
+			function btn3(){
+				if (timer==null){
+					timer=window.setInterval("btn4()",1000)
+				}
+			}
+			function btn4(){
+				i++
+				if(i>4){
+					i=0
+				}
+				document.getElementById("no.1").src=arr[i]
+			}
+			function btn5(){
+				window.clearInterval(timer)
+				timer=null
+			}
+		</script>
+	</body>
+</html>
+
+ 
+ <!-- <!DOCTYPE html>
+ <html>
+ 	<head>
+ 		<meta charset="utf-8" />
+ 		<title>6.15</title>
+ 	</head>
+ 	
+ 	<body>
+ 		<img  id="no.1"  src="img/二西莫夫.png" width="550dp" height="300dp"/><br />
+ 		<button  onclick="btn1(i)" >上一张</button>
+ 		<button  onclick="btn()" >下一张</button>
+ 		
+ 		<script type="text/javascript">
+ 			//99乘法表
+ 			// var i,j
+ 			// for (i=1;i<10;i++){
+ 			// 	for(j=1;j<=i;j++){
+ 			// 		document.write(j+"*"+i+"="+i*j+"&nbsp")
+ 			// 	}
+ 			// 	document.write("<br />")
+ 			// }
+ 			
+ 			//图片轮播
+ 			var i=1
+ 			var j=0
+ 			var arr=new Array()
+ 			arr=["img/二西莫夫.png","img/黑色魅影.png","img/美杜莎.png","img/咆哮.png","img/永恒之钻.png"]
+ 			function btn(){
+ 				i=j+1
+ 				if(i>4){
+ 					i=0
+ 				}
+ 				document.getElementById("no.1").src=arr[i]
+ 				i++
+ 				j=i-1
+ 			}
+ 			function btn1(){
+ 				j--
+ 				if(j<0){
+ 					j=4
+ 				}
+ 				document.getElementById("no.1").src=arr[j]
+ 			}
+ 			
+ 			
+ 		</script>
+ 	</body>
+ </html>
+ -->
