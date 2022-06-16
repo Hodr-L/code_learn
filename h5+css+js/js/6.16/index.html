@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>时钟</title>
+	</head>
+	<body>
+		<font id="clock"> 00:00:00</font><br />
+		<button onclick="clear_time()">暂停</button>
+		<button onclick="get_time()">开始</button>
+		<script type="text/javascript">
+			var flag=null
+			// var f
+			 var f,hour,minute,second 
+			 var mydate=new Date()
+			function get_time(){
+				if(flag==null){
+					f=window.setInterval("get_text()",1000)
+				}
+			}
+			function clear_time(){
+				window.clearInterval(f)
+				f=null
+			}
+			function get_text(){
+				//  var mydate=new Date()
+				//  var hour = mydate.getHours();　　//时
+				//  var minute=mydate.getMinutes();  //分
+				// var second = mydate.getSeconds();//秒
+				
+				mydate=new Date()
+				hour = mydate.getHours();　　//时
+				minute=mydate.getMinutes();  //分s
+				second = mydate.getSeconds();//秒
+				
+				if(second<10){
+					second="0"+second
+				}
+				if(hour<10){
+					hour="0"+hour
+				}
+				if(minute<10){
+					minute="0"+minute
+				}
+					document.getElementById("clock").innerHTML=hour+":"+minute+":"+second
+				
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

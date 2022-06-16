@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<style type="text/css">
+			/* 选择器 */
+			/* 标签选择器 */
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				text-align: center;
+				line-height: 200px;
+				font-size: 150px;
+				color: aquamarine;
+				
+		/* 		line-height: 20px; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			00
+		</div>
+		<button onclick="start()">开始</button>
+		<script type="text/javascript">
+			var a,h,f=null
+			function start(){
+				if(f==null){
+				f=window.setInterval("change()",1000)
+				}
+				window.setTimeout(
+				function(){
+					h=window.clearInterval(f)
+					f=null
+				}
+				,5000)
+			}
+			function change(){
+				a=Math.floor(Math.random()*100+1)
+				document.getElementById("clock").innerHTML=a	
+			}
+
+		</script>
+	</body>
+</html>
